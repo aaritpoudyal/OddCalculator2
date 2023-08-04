@@ -1,0 +1,95 @@
+namespace ConsoleApp5
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Welcome To the Calculator!");
+            Console.WriteLine("--------------------------");
+            while (true)
+            {
+                Console.WriteLine("Please Select Number1");
+                string input1 = Console.ReadLine();
+                if (!double.TryParse(input1, out double number1))
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                    continue;
+                }
+
+                Console.WriteLine("Please Select Number2");
+                string input2 = Console.ReadLine();
+                if (!double.TryParse(input2, out double number2))
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid number.");
+                    continue;
+                }
+
+                Console.WriteLine("Please Choose An Operation, +, -, *, /");
+                string operation = Console.ReadLine();
+                double result= -999;
+                if (operation == "+")
+                {
+                    result = number1 + number2;
+                }
+                else if (operation == "-")
+                {
+                    result = number1 - number2;
+                }
+                else if (operation == "*")
+                {
+                    result = number1 * number2;
+                }
+                else if (operation == "/")
+                {
+                   if (number2 == 0)
+                    {
+                        Console.WriteLine("Invalid Number! You cannot divide by Zero");
+                        continue;
+                    }
+                    result = number1 / number2;                    
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Operation");
+                    continue;
+                }
+               
+
+                Console.WriteLine("The Answer is " + result);
+                {
+                    Console.WriteLine("Type Y (Yes) If You Want to try again, Type N (No) If You dont wanna try again.");
+                    Console.ReadLine();
+                }
+                
+               string userAnswer = Console.ReadLine();
+                if(userAnswer == "N")
+                {
+                    Console.WriteLine("Thank you for playing!");
+                    break;
+                }
+                string userName = Console.ReadLine();
+                if (userName == "Y") 
+                {
+                    Console.WriteLine("I guess you like this game.");
+                    continue;
+                }
+                
+
+
+
+
+
+
+
+
+
+
+
+
+                }
+
+
+
+            }
+    }
+}
